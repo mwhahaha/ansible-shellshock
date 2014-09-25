@@ -3,9 +3,11 @@
 ### ensure bash is latest
 ###
 - name: Purge yum cache
+  when: ansible_os_family == "RedHat"
   command: /usr/bin/yum clean expire-cache
 
 - name: Update bash
+  when: ansible_os_family == "RedHat"
   yum: name={{ item }} state=latest
   with_items:
    - bash

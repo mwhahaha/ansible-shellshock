@@ -5,5 +5,4 @@
   sudo: yes
   tasks:
     - include: tasks/bash/update.yml
-    - include: tasks/bash/ld_preload.yml
     - include: tasks/bash/check.yml
