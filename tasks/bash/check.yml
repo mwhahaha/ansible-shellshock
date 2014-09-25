@@ -1,0 +1,8 @@
+---
+ - name: Vulnerable check
+   shell: "env x='() { :;}; echo vulnerable'  bash -c 'echo this is a test'"
+   register: result
+
+ - name: Check results
+   fail: msg="!!!! Bash still vulnerable"
+   when: result.stdout.find('vulnerable') != -1

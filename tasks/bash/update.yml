@@ -1,0 +1,11 @@
+---
+###
+### ensure bash is latest
+###
+- name: Purge yum cache
+  command: /usr/bin/yum clean expire-cache
+
+- name: Update bash
+  yum: name={{ item }} state=latest
+  with_items:
+   - bash

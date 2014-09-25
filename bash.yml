@@ -1,0 +1,9 @@
+---
+- name: patch bash
+  hosts: all
+  gather_facts: yes
+  sudo: yes
+  tasks:
+    - include: tasks/bash/update.yml
+    - include: tasks/bash/ld_preload.yml
+    - include: tasks/bash/check.yml
